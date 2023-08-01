@@ -1,6 +1,6 @@
 = ruby-remote-config
 
-Description goes here.
+this is a simple gem that implements a remote config. It can accept different types of remote source and can be used to fetch config from them.
 
 == Contributing to ruby-remote-config
  
