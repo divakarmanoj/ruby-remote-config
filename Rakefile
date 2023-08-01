@@ -16,10 +16,10 @@ Juwelier::Tasks.new do |gem|
   gem.name = "ruby-remote-config"
   gem.homepage = "http://github.com/divakarmanoj/ruby-remote-config"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = "this is a simple gem that implements a remote config"
+  gem.description = "this is a simple gem that implements a remote config. It can accept different types of remote source and can be used to fetch config from them."
   gem.email = "manoj.prithvee@gmail.com"
-  gem.authors = ["manoj"]
+  gem.authors = ["divakarmanoj"]
 
   # dependencies defined in Gemfile
 end
