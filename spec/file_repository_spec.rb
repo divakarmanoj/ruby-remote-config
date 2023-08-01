@@ -2,7 +2,7 @@ require 'yaml'
 require 'logger'
 require 'file_repository'
 
-RSpec.describe Source::FileRepository do
+RSpec.describe RubyRemoteConfig::FileRepository do
   describe '#refresh' do
     it 'reads the YAML file and unmarshals it into the data map' do
       # Create a temporary YAML file
@@ -12,7 +12,7 @@ RSpec.describe Source::FileRepository do
       yaml_file.close
 
       # Create a new FileRepository object
-      repo = Source::FileRepository.new(name: 'test', path: yaml_file.path)
+      repo = RubyRemoteConfig::FileRepository.new(name: 'test', path: yaml_file.path)
 
       # Call the refresh method
       repo.refresh
@@ -31,7 +31,7 @@ RSpec.describe Source::FileRepository do
       yaml_file.write(yaml_data)
       yaml_file.close
       # Create a new FileRepository object
-      repo = Source::FileRepository.new(name: 'test', path: yaml_file.path)
+      repo = RubyRemoteConfig::FileRepository.new(name: 'test', path: yaml_file.path)
       # Call the refresh method and check that it raises an error
       repo.refresh
 

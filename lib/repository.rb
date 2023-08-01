@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Source
+module RubyRemoteConfig
   module Repository
     attr_reader :name, :data, :lock
 

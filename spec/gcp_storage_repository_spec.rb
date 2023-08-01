@@ -3,7 +3,7 @@ require 'yaml'
 require 'rspec/mocks'
 require 'gcp_storage_repository'
 
-RSpec.describe Source::GcpStorageRepository do
+RSpec.describe RubyRemoteConfig::GcpStorageRepository do
   describe '#refresh' do
     it 'reads the YAML file from the GCS bucket and unmarshals it into the data map' do
       # Create a mock storage object
@@ -22,7 +22,7 @@ RSpec.describe Source::GcpStorageRepository do
       allow(file_mock).to receive(:download).and_return('config_name: { key: value }')
 
       # Create a new GcpStorageRepository object
-      repo = Source::GcpStorageRepository.new(name: 'test', bucket_name: 'my-bucket', object_name: 'my-file')
+      repo = RubyRemoteConfig::GcpStorageRepository.new(name: 'test', bucket_name: 'my-bucket', object_name: 'my-file')
 
       # Call the refresh method
       repo.refresh
@@ -38,7 +38,7 @@ RSpec.describe Source::GcpStorageRepository do
       allow(storage_mock).to receive(:bucket).and_raise(StandardError.new('Error creating bucket'))
 
       # Create a new GcpStorageRepository object
-      repo = Source::GcpStorageRepository.new(name: 'test', bucket_name: 'my-bucket', object_name: 'my-file')
+      repo = RubyRemoteConfig::GcpStorageRepository.new(name: 'test', bucket_name: 'my-bucket', object_name: 'my-file')
 
       # Call the refresh method and check that it raises an error
       expect { repo.refresh }.to raise_error('Error refreshing configuration data: Error creating bucket')

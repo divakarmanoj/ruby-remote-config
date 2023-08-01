@@ -6,9 +6,9 @@ require "repository"
 
 # GcpStorageRepository is a class that implements the Repository interface for
 # handling configuration data stored in a YAML file within a GCS bucket.
-module Source
+module RubyRemoteConfig
   class GcpStorageRepository
-    include Source::Repository
+    include RubyRemoteConfig::Repository
     attr_reader :bucket_name, :object_name, :client
 
     def initialize(name:, bucket_name:, object_name:)

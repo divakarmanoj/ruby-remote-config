@@ -4,7 +4,7 @@ require 'yaml'
 require 'logger'
 require 'web_repository'
 
-RSpec.describe Source::WebRepository do
+RSpec.describe RubyRemoteConfig::WebRepository do
   describe '#refresh' do
     it 'fetches the YAML data from the specified URL and unmarshals it into the data map' do
       # Create a temporary YAML file
@@ -33,7 +33,7 @@ RSpec.describe Source::WebRepository do
       end
 
       # Create a new WebRepository object
-      repo = Source::WebRepository.new(name: 'test', url: "http://127.0.0.1:#{server_port}/config.yml")
+      repo = RubyRemoteConfig::WebRepository.new(name: 'test', url: "http://127.0.0.1:#{server_port}/config.yml")
 
       # Call the refresh method
       repo.refresh
@@ -62,7 +62,7 @@ RSpec.describe Source::WebRepository do
       end
 
       # Create a new WebRepository object
-      repo = Source::WebRepository.new(name: 'test', url: "http://127.0.0.1:#{server_port}/config.yml")
+      repo = RubyRemoteConfig::WebRepository.new(name: 'test', url: "http://127.0.0.1:#{server_port}/config.yml")
 
       # Call the refresh method and check that it raises an error
       expect { repo.refresh }.to raise_error(StandardError)

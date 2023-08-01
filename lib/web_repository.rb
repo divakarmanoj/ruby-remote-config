@@ -6,9 +6,9 @@ require 'yaml'
 require 'logger'
 require "repository"
 
-module Source
+module RubyRemoteConfig
   class WebRepository
-    include Source::Repository
+    include RubyRemoteConfig::Repository
     attr_reader :url
 
     def initialize(name:, url:)
