@@ -21,8 +21,7 @@ module RubyRemoteConfig
       # Client is initialized with the latest data before it is used.
       @repository.refresh
 
-      # Start the background refresh goroutine by calling the refresh function
-      # with the newly created context and the client as arguments.
+      # Start the background refresh threads by calling the refresh function
       Thread.new { refresh() }
 
       # Return the created Client instance, which is now ready to use.
